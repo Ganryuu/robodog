@@ -1,0 +1,4 @@
+Flask==2.2.2
+mediapipe==0.9.2.1
+opencv_python_headless==3.4.18.65
+pygame==2.2.0
