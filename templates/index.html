@@ -23,88 +23,134 @@
 </head>
 <body class="bg-gray-100">
 
+  
     
-    <nav class="bg-gray-900">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div class="flex items-center justify-between h-16">
-            <div class="flex-shrink-0">
-                <div class="text-white">
-                  <i class="fa-solid fa-gears"></i> 
-                  ML Engines
-                </div>
+      <header class="py-4 bg-gray-800">
+        <div class="max-w-4xl mx-auto px-8 flex justify-between items-center">
+
+          <img src="/static/robo.svg" width="40" height="40"alt="robodog">
+         
+          <h1 class="text-2xl text-white font-bold">
+            RoboDog
+           
+          </h1>
+          
+          <div class="flex items-center">
+            <div class="mr-4">
+             
+              <button class="bg-gray-700 hover:bg-gray-600 text-white rounded-lg px-4 py-2">
+                FAQ 
+              </button>
             </div>
-            <div class="flex">
-              <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Novation City Challenge</a>
+            <div>
+              <button class="bg-gray-700 hover:bg-gray-600 text-white rounded-lg px-4 py-2">
+                Contacts
+              </button>
             </div>
           </div>
         </div>
-      </nav>
-
-
+      </header>
 
 
   
-    <div class="flex  items-center justify-center  bg-gray-100 pt-6 mt-3 ">
-        <div class="flex flex-col items-center justify-center  container mx-auto ">
+      <div class="flex  items-center justify-center  bg-gray-100 pt-6 mt-3 ">
+        <div class="flex flex-col items-center justify-center   ">
           
-            <h1 class="text-4xl font-bold mb-6">
-                Safe Construction 
-                <i class="fa-solid fa-helmet-safety"></i>
+            <h1 class="text-4xl font-bold m-6">
+               Control Panel
+               <i class="fa-sharp fa-solid fa-sliders"></i>
             </h1>
-            
-            <h4 class="text-lg mb-4">To Activate the safety Camera Click below</h4>
-           
-            <div class="mb-8">
-                <button id="activate-camera" class="mb-4 bg-yellow-400 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded">
-                    <a href="{{ url_for('video_feed') }}">Start Safety Screening
-                      <i class="fa-solid fa-video m-2"></i>
-                    </a>
-                </button>
-            </div>
-          </div>      
-    </div>
-    <div class="container mx-auto p-4 bg-gray-900 w-1/2">
-        <p class="text-lg text-white p-3 m-3 ">
-            Safe Construction is a an vision model that detects human presence in hazardous places, 
-            and for the protection of personnel and visitors alerts surroundings when dangerous operations 
-            are taking place . 
 
-            <br>
-            This Prototype is a submission for the AINC'23 , for the Novation City Challenge
-            
-        </p>
-      </div>
+            <div class="grid grid-cols-4 gap-4 m-3">
+              <div class="max-w-sm rounded overflow-hidden shadow-lg m-3">
+                <img class="w-full" src="/static/object.jpg" alt="object detection">
 
-      <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
-        <h2 class="text-3xl font-extrabold tracking-tight text-gray-900">Developed With : </h2>
-        <div class="mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3">
-          
-            <!-- first card content here -->
-            <div class="bg-gray-900 rounded-lg shadow-lg overflow-hidden mb-3">
-              <img class="w-full  object-cover" src="https://yt3.googleusercontent.com/ytc/AL5GRJUKWL_lGP4sPN8NkK4b-54HWq0XirQ63CLY3FAI=s900-c-k-c0x00ffffff-no-rj" alt="mediapipe">
-              
-            </div>
-            <div class="bg-gray-900 rounded-lg shadow-lg overflow-hidden mb-3">
-              <img class="w-full  object-cover" src="https://3.bp.blogspot.com/-yvrV6MUueGg/ToICp0YIDPI/AAAAAAAAADg/SYKg4dWpyC43AAfrDwBTR0VYmYT0QshEgCPcBGAYYCw/s1600/OpenCV_Logo.png" alt="opencv">
-              
-            </div>
-           
+                <button id="activate-camera" class="mb-4 bg-blue-400 hover:bg-blue-700 text-white font-bold py-2 px-4 m-3  rounded">
+                  <a href="{{ url_for('index') }}">activate
+                    <i class="fa-regular fa-circle-play"></i>
+                  </a>
+              </button>
+        
+                <div class="px-6 py-4">
+                  
+                  <div class="  font-bold text-xl mb-2">Object Detection</div>
+                </div>
+                
+              </div>
+              <div class="max-w-sm rounded overflow-hidden shadow-lg m-3">
+                <img class="w-full" src="/static/media.jpg" alt="pose estimation">
+                <button id="activate-camera" class="mb-4 bg-blue-400 hover:bg-blue-700 text-white font-bold py-2 px-4 m-3  rounded">
+                  <a href="{{ url_for('video_feed') }}">activate
+                    <i class="fa-regular fa-circle-play"></i>
+                  </a>
+              </button>
+                <div class="px-6 py-4">
+                  <div class=" bottom  font-bold text-xl mb-2">Human Pose estimation</div>
+                </div>
+              </div>
+              <div class="max-w-sm rounded overflow-hidden shadow-lg m-3">
+                <img class="w-full" src="/static/navigation.png" alt="Environment navigation">
+                <button id="activate-camera" class="mb-4 bg-blue-400 hover:bg-blue-700 text-white font-bold py-2 px-4 m-3 rounded">
+                  <a href="{{ url_for('video_feed') }}">activate
+                    <i class="fa-regular fa-circle-play"></i>
+                  </a>
+              </button>
+                <div class="px-6 py-4">
+                  <div class="font-bold text-xl mb-2">Environment Navigation</div>
+                </div>
+              </div>
+              <div class="max-w-sm rounded overflow-hidden shadow-lg m-3">
+                <img class="w-full" src="/static/voice_assistant.jpg" alt="voice assistant">
+                <button id="activate-camera" class="mb-4 bg-blue-400 hover:bg-blue-700 text-white font-bold py-2 px-4 m-3 rounded">
+                  <a href="{{ url_for('index') }}">activate
+                    <i class="fa-regular fa-circle-play"></i>
+                  </a>
+              </button>
+                <div class="px-6 py-4">
+                  <div class="font-bold text-xl mb-2">Voice Assistance</div>
+                </div>
+              </div>
+             
+              <button class=" bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4">
+                <a href="{{ url_for('addmodule') }}">Add Module
+                  
+                </a>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
+                </svg>
+              </button>
+            </div>     
+          </div>
+        </div> 
 
-           
-         
-          
-        </div>
-      </div>
-
-
-
-
-
-    <footer class="bg-gray-800 text-gray-300 py-4 px-4 sm:px-6 lg:px-8 py-12 fixed bottom-0 w-full">
-        <div class="flex justify-center items-center">
-          <p class="text-sm">&copy; 2023 ML Engines Team </p>
-        </div>
-      </footer>
-      
+   
     
+    
+
+
+      
+      <div class="container mx-auto px-4 py-8">
+        <h1 class="text-2xl font-bold mb-8">Connect to Bluetooth</h1>
+        <form>
+          <div class="mb-4">
+            <label class="block text-black-300 font-bold mb-2" for="device-name">Device name</label>
+            <input class="w-full p-2 border border-gray-800 rounded" type="text" name="device-name" id="device-name">
+          </div>
+          <div class="mb-4">
+            <label class="block text-black-300 font-bold mb-2" for="device-address">Device address</label>
+            <input class="w-full p-2 border border-gray-800 rounded" type="text" name="device-address" id="device-address">
+          </div>
+          <div class="flex justify-end">
+            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" type="submit">Connect</button>
+          </div>
+        </form>
+      </div>
+      
+
+      
+    <footer class="bg-gray-800 text-gray-300 py-4 px-4 sm:px-6 lg:px-8 py-12  w-full">
+      <div class="flex justify-center items-center">
+        <p class="text-sm">&copy; RoboDog Project </p>
+      </div>
+    </footer>
 </body>

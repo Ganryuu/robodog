@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add new module - Control Panel</title>
+    <!-- Include TailwindCSS styles -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Use dark mode -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet" media="(prefers-color-scheme: dark)">
+  </head>
+  <body class="bg-gray-900 text-white">
+    <div class="container mx-auto px-4 py-8">
+      <h1 class="text-2xl font-bold mb-8">Robodog New Module Integration</h1>
+      <form>
+        <div class="mb-4">
+          <label class="block text-gray-300 font-bold mb-2" for="name">Name</label>
+          <input class="w-full p-2 border border-gray-800 rounded" type="text" name="name" id="name">
+        </div>
+        <div class="mb-4">
+          <label class="block text-gray-300 font-bold mb-2" for="functionality">Functionality</label>
+          <textarea class="w-full p-2 border border-gray-800 rounded" name="functionality" id="functionality"></textarea>
+        </div>
+        <div class="mb-4">
+          <label class="block text-gray-300 font-bold mb-2" for="image-upload">Image upload</label>
+          <input class="w-full p-2 border border-gray-800 rounded" type="file" name="image-upload" id="image-upload">
+        </div>
+        <div class="mb-4">
+          <label class="block text-gray-300 font-bold mb-2" for="github-link">GitHub link</label>
+          <input class="w-full p-2 border border-gray-800 rounded" type="text" name="github-link" id="github-link">
+        </div>
+        <div class="mb-4">
+          <label class="block text-gray-300 font-bold mb-2" for="device-name">Device name</label>
+          <input class="w-full p-2 border border-gray-800 rounded" type="text" name="device-name" id="device-name">
+        </div>
+        <div class="mb-4">
+          <label class="block text-gray-300 font-bold mb-2" for="bluetooth-connection">Bluetooth connection</label>
+          <input class="w-full p-2 border border-gray-800 rounded" type="text" name="bluetooth-connection" id="bluetooth-connection">
+        </div>
+        <div class="flex justify-end">
+          <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" type="submit">Submit</button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

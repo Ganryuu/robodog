@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Robot Control Panel</title>
+    <!-- Tailwind CSS -->
+   
+  </head>
+  <body class="bg-gray-100">
+    <div class="max-w-4xl mx-auto p-8">
+      <h1 class="text-2xl font-bold mb-8">Robot Control Panel</h1>
+      <div class="grid grid-cols-2 gap-8">
+        <div class="bg-white rounded-lg p-8">
+          <h2 class="text-lg font-bold mb-4">Movement Control</h2>
+          <form>
+            <div class="flex items-center mb-4">
+              <label for="forward" class="mr-4">Forward</label>
+              <input type="radio" id="forward" name="movement" value="forward" />
+            </div>
+            <div class="flex items-center mb-4">
+              <label for="backward" class="mr-4">Backward</label>
+              <input type="radio" id="backward" name="movement" value="backward" />
+            </div>
+            <div class="flex items-center mb-4">
+              <label for="left" class="mr-4">Left</label>
+              <input type="radio" id="left" name="movement" value="left" />
+            </div>
+            <div class="flex items-center mb-4">
+              <label for="right" class="mr-4">Right</label>
+              <input type="radio" id="right" name="movement" value="right" />
+            </div>
+            <button
+              type="submit"
+              class="bg-blue-500 hover:bg-blue-600 text-white rounded-lg px-4 py-2"
+            >
+              Submit
+            </button>
+          </form>
+        </div>
+        <div class="bg-white rounded-lg p-8">
+          <h2 class="text-lg font-bold mb-4">Arm Control</h2>
+          <form>
+            <div class="flex items-center mb-4">
+              <label for="up" class="mr-4">Up</label>
+              <input type="radio" id="up" name="arm" value="up" />
+            </div>
+            <div class="flex items-center mb-4">
+              <label for="down" class="mr-4">Down</label>
+              <input type="radio" id="down" name="arm" value="down" />
+            </div>
+            <div class="flex items-center mb-4">
+              <label for="rotate" class="mr-4">Rotate</label>
+              <input type="radio" id="rotate" name="arm" value="rotate" />
+            </div>
+            <button
+              type="submit"
+              class="bg-blue-500 hover:bg-blue-600 text-white rounded-lg px-4 py-2"
+            >
+              Submit
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

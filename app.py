@@ -4,7 +4,7 @@ from flask import Flask, Response, render_template
 from pygame import mixer 
 
 mixer.init() 
-mixer.music.load('./assets/Alert Siren Sound FX.mp3')
+# mixer.music.load('./assets/Alert Siren Sound FX.mp3')
 
 app = Flask(__name__)
 mp_pose = mp.solutions.pose
@@ -23,8 +23,8 @@ human_detected = False
 def generate():
     global human_count
     global human_detected
-
-    while True:
+    active = True 
+    while active:
         ret, frame = cap.read()
         frame = cv2.flip(frame, 1)
 
@@ -58,12 +58,12 @@ def generate():
                 human_detected = False
 
         # displaying warning message on the camera and alerting nearby personnel plus activating warning siren
-        if human_detected:
+        # if human_detected:
             
-            cv2.putText(frame, "ALERT : Human detected", (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 1,  BLUE, 2)
-        else:
-            cv2.putText(frame, "CLEAR : No personnel around", (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, GREEN, 2)
-            mixer.music.play()
+        #     cv2.putText(frame, "ALERT : Human detected", (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 1,  BLUE, 2)
+        # else:
+        #     cv2.putText(frame, "CLEAR : No personnel around", (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, GREEN, 2)
+            # mixer.music.play()
         # Convert the frame to JPEG format ( besh najmou nraw les images 3al navigateur ) step 1 
         frame_encoded = cv2.imencode('.jpg', frame)[1].tobytes()
 
@@ -71,7 +71,8 @@ def generate():
         yield (b'--frame\r\n'
                 b'Content-Type: image/jpeg\r\n\r\n' + frame_encoded + b'\r\n')
 
-
+        if cv2.waitKey(1) & 0xFF == ord('q'):
+            break
 #home page
 @app.route('/')
 def index():
@@ -80,7 +81,9 @@ def index():
 @app.route('/video_feed')
 def video_feed():
   return Response(generate(), mimetype='multipart/x-mixed-replace; boundary=frame')
-
+@app.route('/add_module')
+def addmodule():
+  return render_template('new_module.html')
 
 if __name__ == "__main__":
   app.run(debug=True)
