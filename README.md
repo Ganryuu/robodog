@@ -1,19 +1,19 @@
 
 
-# This is the solution for the novation city safe construction site challenge
+# Robodog project remote control panel 
 
 ## Installing
 
 Clone the repository locally
 
 ```
-  git clone https://github.com/Ganryuu/AINC-23_Novation_city.git
+  git clone https://github.com/Ganryuu/robodog.git
 ```
 
 Go inside the repository folder 
 
 ```
-  cd ./AINC-23_Novation_city
+  cd ./robodog
 ```
 
 Install requirements
@@ -30,5 +30,4 @@ python app.py
 ``` 
 
 
-Video Demo Here : 
-https://www.awesomescreenshot.com/video/16158842?key=a6a9a42cbf560648225fcb57aafc85f7
+
